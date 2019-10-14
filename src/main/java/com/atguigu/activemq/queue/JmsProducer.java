@@ -29,7 +29,7 @@ public class JmsProducer {
         MessageProducer messageProducer = session.createProducer(queue);
 
         // 6.通过使用messageProducer生产3条消息发送到MQ的队列里面
-        for (int i = 1; i <= 3; i++) {
+        for (int i = 1; i <= 6; i++) {
             // 7.创建消息
             TextMessage textMessage = session.createTextMessage("MessageListener---" + i);// 理解为一个字符串
 

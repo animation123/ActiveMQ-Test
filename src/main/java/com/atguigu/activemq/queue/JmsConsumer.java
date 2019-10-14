@@ -12,6 +12,8 @@ public class JmsConsumer {
 
     public static void main(String[] args) throws JMSException, IOException {
 
+        System.out.println("****我是2号消费者");
+
         // 1.创建连接工厂，按照给定的URL地址，采用默认用户名和密码
         ActiveMQConnectionFactory activeMQConnectionFactory = new ActiveMQConnectionFactory(ACTIVEMQ_URL);
 
@@ -45,7 +47,12 @@ public class JmsConsumer {
 //        session.close();
 //        connection.close();
 
-        // 通过监听的方式来消费消息
+        /**
+         * 通过监听的方式来消费消息 MessageConsumer messageConsumer = session.createConsumer(queue);
+         * 异步非阻塞方式（监听器onMessage()）
+         * 订阅者或接收者通过MessageConsumer的setMessageListener(MessageListener listener)注册一个消息监听器，
+         * 当消息到达之后，系统自动调用监听器MessageListener的onMessage(Message message)方法
+         */
         messageConsumer.setMessageListener(new MessageListener() {
             @Override
             public void onMessage(Message message) {
@@ -63,5 +70,18 @@ public class JmsConsumer {
         messageConsumer.close();
         session.close();
         connection.close();
+
+        /**
+         * 1.先生产，只启动1号消费者。问题：1号消费者能消费消息吗？   Y
+         *
+         * 2.先生产，先启动1号消费者，再启动2号消费者。问题：2号消费者还能消费消息吗？
+         *  2.1 1号可以消费          Y
+         *  2.2 2号可以消费吗？      N
+         *
+         * 3.先启动2个消费者，再生产6条消息，请问，消费情况如何？
+         *  3.1 2个消费者都有6条
+         *  3.2 先到先得，6条全给一个消费者
+         *  3.3 一人一半             Y
+         */
     }
 }
