@@ -4,7 +4,7 @@ import org.apache.activemq.ActiveMQConnectionFactory;
 
 import javax.jms.*;
 
-public class JmsProduce {
+public class JmsProducer {
 
     public static final String ACTIVEMQ_URL = "tcp://192.168.119.128:61616";
     public static final String QUEUE_NAME = "queue01";
@@ -29,7 +29,7 @@ public class JmsProduce {
         MessageProducer messageProducer = session.createProducer(queue);
 
         // 6.通过使用messageProducer生产3条消息发送到MQ的队列里面
-        for (int i = 0; i < 3; i++) {
+        for (int i = 1; i <= 3; i++) {
             // 7.创建消息
             TextMessage textMessage = session.createTextMessage("msg---" + i);// 理解为一个字符串
 
