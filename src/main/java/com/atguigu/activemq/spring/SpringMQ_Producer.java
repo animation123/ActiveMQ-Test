@@ -24,7 +24,7 @@ public class SpringMQ_Producer {
         SpringMQ_Producer producer = (SpringMQ_Producer) ctx.getBean("springMQ_Producer"); // SpringMQ_Producer p = new SpringMQ_Producer();
 
         producer.jmsTemplate.send((session) -> {
-            TextMessage textMessage = session.createTextMessage("****spring和ActiveMQ的整合case1111****");
+            TextMessage textMessage = session.createTextMessage("****spring和ActiveMQ的整合case for MessageListener333****");
             return textMessage;
         });
 
