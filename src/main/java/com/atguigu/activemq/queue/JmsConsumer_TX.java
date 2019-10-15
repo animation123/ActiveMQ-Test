@@ -21,7 +21,7 @@ public class JmsConsumer_TX {
 
         // 3.创建会话session
         // 两个参数，第一个为事务/第二个为签收
-        Session session = connection.createSession(false, Session.CLIENT_ACKNOWLEDGE);
+        Session session = connection.createSession(true, Session.CLIENT_ACKNOWLEDGE);
 
         // 4.创建目的地（具体是队列还是主题）
         Queue queue = session.createQueue(QUEUE_NAME);
