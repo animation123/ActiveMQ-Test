@@ -1,0 +1,14 @@
+server:
+  port: 5566    # 启动第2个消费者时候记得修改为5566端口号
+
+spring:
+  activemq:
+    broker-url: tcp://192.168.119.128:61616 # MQ服务器地址
+    user: admin
+    password: admin
+  jms:
+    pub-sub-domain: true     # false = Queue   true = Topic
+
+
+# 自己定义队列名称
+myTopic: boot-activemq-topic

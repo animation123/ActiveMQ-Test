@@ -17,6 +17,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="boot_mq_consumer" options="-parameters" />
       <module name="boot_mq_produce" options="-parameters" />
+      <module name="boot_mq_topic_consumer" options="-parameters" />
       <module name="boot_mq_topic_produce" options="-parameters" />
     </option>
   </component>
