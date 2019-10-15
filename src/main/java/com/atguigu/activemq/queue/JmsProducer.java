@@ -32,6 +32,7 @@ public class JmsProducer {
         for (int i = 1; i <= 3; i++) {
             // 7.创建消息
             TextMessage textMessage = session.createTextMessage("msg---" + i);// 理解为一个字符串
+            textMessage.setStringProperty("c01", "vip");
 
             // 8.通过messageProducer发送给mq
             messageProducer.send(textMessage);
