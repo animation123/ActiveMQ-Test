@@ -6,7 +6,11 @@
 
     <groupId>com.atguigu.activemq</groupId>
     <artifactId>activemq_demo</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>boot_mq_consumer</module>
+    </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

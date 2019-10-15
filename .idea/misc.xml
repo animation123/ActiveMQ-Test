@@ -5,6 +5,10 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/boot_mq_produce/pom.xml" />
+        <option value="$PROJECT_DIR$/boot_mq_consumer/pom.xml" />
+        <option value="$PROJECT_DIR$/boot_mq_topic_consumer/pom.xml" />
+        <option value="$PROJECT_DIR$/boot_mq_topic_produce/pom.xml" />
       </list>
     </option>
   </component>
