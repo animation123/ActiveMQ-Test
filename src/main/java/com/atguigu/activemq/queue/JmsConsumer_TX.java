@@ -21,7 +21,7 @@ public class JmsConsumer_TX {
 
         // 3.创建会话session
         // 两个参数，第一个为事务/第二个为签收
-        Session session = connection.createSession(true, Session.AUTO_ACKNOWLEDGE);
+        Session session = connection.createSession(false, Session.CLIENT_ACKNOWLEDGE);
 
         // 4.创建目的地（具体是队列还是主题）
         Queue queue = session.createQueue(QUEUE_NAME);
@@ -33,12 +33,13 @@ public class JmsConsumer_TX {
             TextMessage textMessage = (TextMessage) messageConsumer.receive(4000L);
             if (null != textMessage) {
                 System.out.println("******消费者接收到消息：" + textMessage.getText());
+                textMessage.acknowledge();
             } else {
                 break;
             }
         }
         messageConsumer.close();
-        session.commit();
+//        session.commit();
         session.close();
         connection.close();
     }
