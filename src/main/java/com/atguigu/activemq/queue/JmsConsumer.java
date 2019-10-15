@@ -7,7 +7,8 @@ import java.io.IOException;
 
 public class JmsConsumer {
 
-    public static final String ACTIVEMQ_URL = "tcp://192.168.119.128:61616";
+    //    public static final String ACTIVEMQ_URL = "tcp://192.168.119.128:61616";
+    public static final String ACTIVEMQ_URL = "tcp://localhost:61616";
     public static final String QUEUE_NAME = "queue01";
 
     public static void main(String[] args) throws JMSException, IOException {
@@ -57,7 +58,7 @@ public class JmsConsumer {
                 if (null != message && message instanceof TextMessage) {
                     TextMessage textMessage = (TextMessage) message;
                     try {
-                        System.out.println("******消费者接收到消息：" + textMessage.getText());
+                        System.out.println("******消费者接收到消息broker：" + textMessage.getText());
                     } catch (JMSException e) {
                         e.printStackTrace();
                     }
