@@ -27,19 +27,15 @@ public class JmsProducer {
 
         // 5.创建消息的生产者
         MessageProducer messageProducer = session.createProducer(queue);
+        messageProducer.setDeliveryMode(DeliveryMode.PERSISTENT);
 
         // 6.通过使用messageProducer生产3条消息发送到MQ的队列里面
         for (int i = 1; i <= 3; i++) {
             // 7.创建消息
             TextMessage textMessage = session.createTextMessage("msg---" + i);// 理解为一个字符串
-            textMessage.setStringProperty("c01", "vip");
 
             // 8.通过messageProducer发送给mq
             messageProducer.send(textMessage);
-
-            MapMessage mapMessage = session.createMapMessage();
-            mapMessage.setString("k1", "mapMessage---v1");
-            messageProducer.send(mapMessage);
         }
 
         // 9.关闭资源
