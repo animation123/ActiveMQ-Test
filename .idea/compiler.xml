@@ -2,14 +2,15 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="boot_mq_topic_consumer" />
-        <module name="boot_mq_topic_produce" />
-        <module name="boot_mq_produce" />
         <module name="boot_mq_consumer" />
+        <module name="boot_mq_produce" />
+        <module name="boot_mq_topic_produce" />
+        <module name="boot_mq_topic_consumer" />
       </profile>
     </annotationProcessing>
   </component>
