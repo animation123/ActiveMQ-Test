@@ -7,10 +7,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="boot_mq_consumer" />
-        <module name="boot_mq_produce" />
         <module name="boot_mq_topic_produce" />
+        <module name="boot_mq_produce" />
         <module name="boot_mq_topic_consumer" />
+        <module name="boot_mq_consumer" />
       </profile>
     </annotationProcessing>
   </component>

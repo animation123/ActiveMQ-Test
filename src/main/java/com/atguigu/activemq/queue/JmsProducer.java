@@ -6,9 +6,9 @@ import javax.jms.*;
 
 public class JmsProducer {
 
-    public static final String ACTIVEMQ_URL = "nio://192.168.119.128:61618";
+    public static final String ACTIVEMQ_URL = "nio://192.168.119.128:61608";
 //    public static final String ACTIVEMQ_URL = "tcp://localhost:61616";
-    public static final String QUEUE_NAME = "Transport";
+    public static final String QUEUE_NAME = "nioauto";
 
     public static void main(String[] args) throws JMSException {
 
